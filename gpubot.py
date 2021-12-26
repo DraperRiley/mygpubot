@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[92]:
+# In[19]:
 
 
 from selenium import webdriver as wd
@@ -10,7 +10,7 @@ import chromedriver_binary
 import time
 
 
-# In[93]:
+# In[20]:
 
 
 wd = wd.Chrome()
@@ -20,20 +20,20 @@ test_link = 'https://www.bestbuy.com/site/samsung-58-class-7-series-led-4k-uhd-s
 gpu_link = 'https://www.bestbuy.com/site/nvidia-geforce-rtx-3070-8gb-gddr6-pci-express-4-0-graphics-card-dark-platinum-and-black/6429442.p?skuId=6429442'
 
 
-# In[94]:
+# In[21]:
 
 
 wd.get(test_link)
 
 
-# In[95]:
+# In[22]:
 
 
 add_to_cart_button = wd.find_element_by_xpath('//*[@class="fulfillment-add-to-cart-button"]/div/div/button')
 add_to_cart_button_state = add_to_cart_button.get_attribute("data-button-state")
 
 
-# In[96]:
+# In[23]:
 
 
 while True:
@@ -50,12 +50,26 @@ while True:
         
 
 
-# In[98]:
+# In[24]:
 
 
 wd.execute_script('window.open('');')
 wd.switch_to.window(wd.window_handles[1])
 wd.get('https://youtu.be/uw_qPfgTxuI')
+play_button = wd.find_element_by_xpath('//*[@id="movie_player"]/div[5]/button')
+play_button.click()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
